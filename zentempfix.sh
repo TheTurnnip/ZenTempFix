@@ -48,13 +48,10 @@ mkdircd(){
 
 genserv() {
     echo "[Unit]
-Description=<probing the kernel module it87 cpu temperature monitoring with a forced id of 0x8620>
+Description=Tempfix
 
 [Service]
-User=<root>
-WorkingDirectory=<$dir>
-ExecStart=<$dir/tempfix.sh>
-Restart=always
+ExecStart=$dir/tempfix.sh
 
 [Install]
 WantedBy=multi-user.target" >> fixtemps.service
