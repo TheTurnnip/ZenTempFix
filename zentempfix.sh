@@ -51,10 +51,10 @@ genserv() {
 Description=Tempfix
 
 [Service]
-ExecStart=$dir/tempfix.sh
+ExecStart=/bin/bash $dir/tempfix.sh
 
 [Install]
-WantedBy=multi-user.target" >> fixtemps.service
+WantedBy=multi-user.target" > fixtemps.service
 }
 
 
@@ -64,7 +64,7 @@ installdir() {
 
 
 gentask() {
-    echo -e "#!/bin/bash \nmodprobe it87 force_id=0x8620" >> tempfix.sh
+    echo -e "#!/bin/bash \nmodprobe it87 force_id=0x8620" > tempfix.sh
 }
 
 
@@ -94,7 +94,7 @@ enabler
 
 echo "Script has compleated install"
 
-#ZenTempFix, A script to fix tempature sensors on the 1.15 Linux Kernel
+#ZenTempFix, A script to fix tempature sensors on the pre-1.15 Linux Kernel
 #Copyright (C) 2021  Ryan Steffan
 
 #This program is free software: you can redistribute it and/or modify
